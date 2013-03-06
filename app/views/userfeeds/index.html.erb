@@ -1,0 +1,9 @@
+<div id ='inputField'>
+  <h1> Enter your Github Username, Thanks </h1>
+	<%= form_tag( {:action => 'getUserEvents'}, :id => 'userFeed') do |f|%>
+	<p>
+ 		<%= text_field_tag :username, params[:username] %>
+	  <%= submit_tag "Fetch" %>
+	</p>
+	<% end %>
+</div>
