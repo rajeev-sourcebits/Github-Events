@@ -1,12 +1,18 @@
 <h1> Events of <%= @username %> </h1>
-<div id='feed'>
+<div class='row'>
+  <ol>
   <% @parseFeed.each do |f| %>
-    <h2> Event => </h2 > <%= f["actor"]["login"] %> 
+    <div id = 'event'>
+    <%= f["actor"]["login"] %> 
       <h3> <%= f["type"][0..-6]+"ed" %></h3>
     <% if f["type"][0..-6].to_s != "Follow" %>
       <h4> <%= f["repo"]["name"] %> </h4>
     <% else %>
       <h4> <%= f["payload"]["target"]["login"] %> </h4> 
-      <% end %>
-    <% end %> 
+    <% end %>
+
+  </div>
+
+<% end %> 
+</ol>
 </div>
